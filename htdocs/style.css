@@ -2,6 +2,10 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+h1{
+    height: 200px;
+}
+
 #menu{
     background-color: #aaaaaa;
 }

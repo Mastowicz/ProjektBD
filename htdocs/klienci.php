@@ -29,3 +29,28 @@
         ?>
     </tbody>
 </table>
+
+<h2>Dodawanie klienta</h2>
+
+<div class="center">
+    <form action="dodaj_klienta.php" method="post">
+        <div class="form-group">
+            <label for="nazwa">Nazwa:</label>
+            <input type="text" class="form-control" id="nazwa" name="nazwa" placeholder="Wpisz nazwę" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="adres">Adres:</label>
+            <input type="text" class="form-control" id="adres" name="adres" placeholder="Wpisz adres" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="opis">Opis:</label>
+            <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Możesz wpisać opis" autocomplete="off">
+            </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+</div>
+
+</body>
+</html>

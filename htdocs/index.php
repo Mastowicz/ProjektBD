@@ -22,10 +22,11 @@
         <div class="row" id="menu">
             <div class="col-md-12">
 
-            <button type="button" id="home" class="btn btn-primary">HOME</button>
-            <button type="button" id="klienci" class="btn btn-primary">KLIENCI</button>
-            <button type="button" id="towary" class="btn btn-primary">TOWARY</button>
-            <button type="button" id="operacje" class="btn btn-primary">OPERACJE</button> 
+            <button type="button" link="home.php" class="link btn btn-primary">HOME</button>
+            <button type="button" link="klienci.php" class="link btn btn-primary">KLIENCI</button>
+            <button type="button" link="towary.php" class="link btn btn-primary">TOWARY</button>
+            <button type="button" link="operacje.php" class="link btn btn-primary">OPERACJE</button> 
+            <button type="button" link="logowanie.php" class="link btn btn-primary">ZALOGUJ</button> 
 
             </div>
         </div>
