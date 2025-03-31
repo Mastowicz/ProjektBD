@@ -26,7 +26,21 @@
             <button type="button" link="klienci.php" class="link btn btn-primary">KLIENCI</button>
             <button type="button" link="towary.php" class="link btn btn-primary">TOWARY</button>
             <button type="button" link="operacje.php" class="link btn btn-primary">OPERACJE</button> 
-            <button type="button" link="logowanie.php" class="link btn btn-primary">ZALOGUJ</button> 
+            <?php
+                session_start();
+                if(isset($_SESSION['login'])){
+            ?>
+                    <button type="button" link="logout.php" class="link btn btn-primary">WYLOGUJ</button>
+            <?php
+                } 
+                else{
+            ?>
+                    <button type="button" link="logowanie.php" class="link btn btn-primary">ZALOGUJ</button>
+            <?php
+                } ;
+            ?>
+
+
 
             </div>
         </div>

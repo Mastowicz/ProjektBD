@@ -2,8 +2,8 @@
 
 
 $server="localhost";
-$user="operator";
-$password="123456";
+$user="root";
+$password="";
 $dbname="r2s";
 
 

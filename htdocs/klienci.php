@@ -2,7 +2,7 @@
 
 <table class="table table-dark table-hover">
     <thead>
-        <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th></tr>
+        <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th><th>Akcja</th></tr>
     </thead>
     <tbody>
         <?php
@@ -20,7 +20,8 @@
             if ($result->num_rows > 0) {
                 $licznik=1;
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["adres"]."</td><td>".$row["opis"]."</td></tr>\n";
+                    echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["adres"]."</td><td>".$row["opis"]."</td>\n";
+                    echo "<td><a class='del' href='delklient.php?id=".$row["id"]."'>X</a></td></tr>\n";
                 }
             }
 
@@ -29,6 +30,11 @@
         ?>
     </tbody>
 </table>
+
+<?php
+session_start();
+if(isset($_SESSION['login'])){
+?>
 
 <h2>Dodawanie klienta</h2>
 
@@ -51,6 +57,12 @@
         <button type="submit" class="btn btn-primary">Dodaj</button>
     </form>
 </div>
+
+<?php
+} else {
+    echo "<h2>Nie masz uprawnień do dodawania klientów</h2>";
+}
+?>
 
 </body>
 </html>
