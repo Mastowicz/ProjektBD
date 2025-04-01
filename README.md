@@ -1,2 +1,2 @@
-# Zaj-cia
+# Ninja
 Tak było!
