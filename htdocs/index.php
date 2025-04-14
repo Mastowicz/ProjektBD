@@ -15,8 +15,8 @@
 <body>
 
         <div class="jumbotron text-center">
-        <h1>Sklep kołki i gwoździe</h1>
-        <p>Projekt na zaliczenie BD</p>
+        Sklep kołki i gwoździe
+        <br>Projekt na zaliczenie BD
         </div>
 
         <div class="row" id="menu">
@@ -25,6 +25,7 @@
             <button type="button" link="home.php" class="link btn btn-primary">HOME</button>
             <button type="button" link="klienci.php" class="link btn btn-primary">KLIENCI</button>
             <button type="button" link="towary.php" class="link btn btn-primary">TOWARY</button>
+            <button type="button" link="zamowienia.php" class="link btn btn-primary">ZAMOWIENIA</button> 
             <button type="button" link="operacje.php" class="link btn btn-primary">OPERACJE</button> 
             <?php
                 session_start();

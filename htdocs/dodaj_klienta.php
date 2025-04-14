@@ -14,8 +14,6 @@
 
     $zapytanie = "INSERT INTO `klienci` (`id`, `nazwa`, `adres`, `opis`) VALUES (NULL, '$nazwa', '$adres', '$opis')";
 
-    echo "<br>".$zapytanie."<br>";
-
     $result = $conn->query($zapytanie) or die("". $conn->error);
 
     $conn->close();

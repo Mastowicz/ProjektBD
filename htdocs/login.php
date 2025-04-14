@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="2;url=index.php"/>
 <?php
 
 $login = $_POST['login'];

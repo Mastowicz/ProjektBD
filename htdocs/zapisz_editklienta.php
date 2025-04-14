@@ -1,16 +1,22 @@
 <meta http-equiv="refresh" content="2;url=index.php"/>
-<?PHP
 
-
+<?php
 include 'dbconfig.php';
-$id = $_GET['id'];
+
+$nazwa = $_POST['nazwa'];
+$adres = $_POST['adres'];
+$opis = $_POST['opis'];
+$id= $_POST['id'];
+
+
 $conn = new mysqli($server, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Błąd połączenia z BD: " . $conn->connect_error);
 }
 
-$zapytanie = "DELETE FROM klienci WHERE `klienci`.`id` = $id LIMIT 1;";
-            
+$zapytanie = "UPDATE `klienci` SET `nazwa` = '$nazwa', `adres` = '$adres', `opis` = '$opis' WHERE `klienci`.`id` = $id;";
+
+
 $result = $conn->query($zapytanie);
 
 $conn->close();

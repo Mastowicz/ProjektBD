@@ -4,26 +4,33 @@ body{
 
 #menu{
     background-color: #aaaaaa;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #main{
     background-color: #889ea2;
     border:1px solid #637174;
     min-height: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+td{
+    width: auto;
 }
 
 #footer{
     background-color:  #8585ff;
 }
 
-#main{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-}
-
 .jumbotron{
     padding: 5px;
+    margin-bottom: 0px;
 }
 
 .center{

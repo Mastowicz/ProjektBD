@@ -2,11 +2,12 @@
 
 <table class="table table-dark table-hover">
     <thead>
-        <tr><th>Lp.</th><th>Nazwa</th><th>Cena</th><th>Ilość</th></tr>
+        <tr><th>Lp.</th><th>Nazwa</th><th>Cena</th><th>Ilość</th><th>Usuń</th><th>Edytuj</th</tr>
     </thead>
     <tbody>
         <?php
             include 'dbconfig.php';
+            session_start();
 
             $conn = new mysqli($server, $user, $password, $dbname);
             if ($conn->connect_error) {
@@ -20,7 +21,14 @@
             if ($result->num_rows > 0) {
                 $licznik=1;
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["cena"]." zł"."</td><td>".$row["ilość"]."</td></tr>\n";
+                    echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["cena"]." zł"."</td><td>".$row["ilość"]."</td>\n";
+                    if(isset($_SESSION['login'])){
+                        echo "<td><a class='del' href='deltowary.php?id=".$row["id"]."'>usuń</a></td>";
+                        echo "<td><a class='del' href='edittowary.php?id=".$row["id"]."'>edytuj</a></td></tr>";
+                    } else {
+                        echo "<td>[brak uprawnien]</td>";
+                        echo "<td>[brak uprawnien]</td></tr>";
+                    }
                 }
             }
 
@@ -30,7 +38,11 @@
     </tbody>
 </table>
 
-<h2>Dodawanie klienta</h2>
+<?php
+if(isset($_SESSION['login'])){
+?>
+
+<h2>Dodanie towaru</h2>
 
 <div class="center">
     <form action="dodaj_towar.php" method="post">
@@ -50,6 +62,12 @@
         <button type="submit" class="btn btn-primary">Dodaj</button>
     </form>
 </div>
+
+<?php
+} else {
+    echo "<h2>Nie masz uprawnień do dodawania klientów</h2>";
+}
+?>
 
 </body>
 </html>

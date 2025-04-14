@@ -14,8 +14,6 @@
 
     $zapytanie = "INSERT INTO `towary` (`id`, `nazwa`, `cena`, `ilość`) VALUES (NULL, '$nazwa', $cena, $ilosc)";
 
-    echo "<br>".$zapytanie."<br>";
-
     $result = $conn->query($zapytanie) or die("". $conn->error);
 
     $conn->close();

@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     die("Błąd połączenia z BD: " . $conn->connect_error);
 }
 
-$zapytanie = "DELETE FROM klienci WHERE `klienci`.`id` = $id LIMIT 1;";
+$zapytanie = "DELETE FROM towary WHERE `towary`.`id` = $id LIMIT 1;";
             
 $result = $conn->query($zapytanie);
 

@@ -2,11 +2,12 @@
 
 <table class="table table-dark table-hover">
     <thead>
-        <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th><th>Akcja</th></tr>
+        <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th><th>Usuń</th><th>Edytuj</th></tr>
     </thead>
     <tbody>
         <?php
             include 'dbconfig.php';
+            session_start();
 
             $conn = new mysqli($server, $user, $password, $dbname);
             if ($conn->connect_error) {
@@ -20,8 +21,14 @@
             if ($result->num_rows > 0) {
                 $licznik=1;
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["adres"]."</td><td>".$row["opis"]."</td>\n";
-                    echo "<td><a class='del' href='delklient.php?id=".$row["id"]."'>X</a></td></tr>\n";
+                        echo "<tr><td>".$licznik++."</td><td>".$row["nazwa"]."</td><td>".$row["adres"]."</td><td>".$row["opis"]."</td>";
+                    if(isset($_SESSION['login'])){
+                        echo "<td><a class='del' href='delklient.php?id=".$row["id"]."'>usuń</a></td>";
+                        echo "<td><a class='del' href='editklient.php?id=".$row["id"]."'>edytuj</a></td></tr>";
+                    } else {
+                        echo "<td>[brak uprawnien]</td>";
+                        echo "<td>[brak uprawnien]</td></tr>";
+                    }
                 }
             }
 
@@ -32,7 +39,6 @@
 </table>
 
 <?php
-session_start();
 if(isset($_SESSION['login'])){
 ?>
 
