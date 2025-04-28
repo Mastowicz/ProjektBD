@@ -1,6 +1,27 @@
+<script>
+    $(document).ready(function(){
+        
+        $("myForm").submit(function(){
+            event.preventDefault();
+            $.ajax({
+						url: "dodaj_klienta.php",
+						type: "POST",
+						data: $("#myForm").serialize(),
+						cache: false,
+						success: function (response) {
+							$("#myTable").append(response);
+                        }
+						});
+
+        });
+
+    });
+
+</script>
+
 <h1>Klienci</h1>
 
-<table class="table table-dark table-hover">
+<table class="table table-dark table-hover" id="myTable">
     <thead>
         <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th><th>Usuń</th><th>Edytuj</th></tr>
     </thead>
@@ -45,7 +66,7 @@ if(isset($_SESSION['login'])){
 <h2>Dodawanie klienta</h2>
 
 <div class="center">
-    <form action="dodaj_klienta.php" method="post">
+    <form method="post" id="myForm" action="dodaj_klienta.php">
         <div class="form-group">
             <label for="nazwa">Nazwa:</label>
             <input type="text" class="form-control" id="nazwa" name="nazwa" placeholder="Wpisz nazwę" autocomplete="off">
@@ -60,7 +81,7 @@ if(isset($_SESSION['login'])){
             </textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Dodaj</button>
+        <input type="submit" class="btn btn-primary">
     </form>
 </div>
 
