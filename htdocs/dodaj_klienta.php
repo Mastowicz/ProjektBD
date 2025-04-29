@@ -17,5 +17,6 @@
     $result = $conn->query($zapytanie) or die("". $conn->error);
 
     $conn->close();
-echo "<tr><td></td><td>$nazwa</td><td>$adres</td><td>$opis</td><td></td><td></td></tr>"
+    
+    echo "<tr><td></td><td>$nazwa</td><td>$adres</td><td>$opis</td><td></td><td></td></tr>"
 ?>

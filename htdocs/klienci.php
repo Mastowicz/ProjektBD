@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function(){
         
-        $("myForm").submit(function(){
+        $("#myForm").submit(function(){
             event.preventDefault();
             $.ajax({
 						url: "dodaj_klienta.php",
@@ -77,11 +77,10 @@ if(isset($_SESSION['login'])){
         </div>
         <div class="form-group">
             <label for="opis">Opis:</label>
-            <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Możesz wpisać opis" autocomplete="off">
-            </textarea>
+            <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Możesz wpisać opis" autocomplete="off"></textarea>
         </div>
 
-        <input type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">Dodaj</button>
     </form>
 </div>
 
