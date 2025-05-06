@@ -4,7 +4,7 @@
         $("#myForm").submit(function(){
             event.preventDefault();
             $.ajax({
-						url: "dodaj_klienta.php",
+						url: "dodaj_towar.php",
 						type: "POST",
 						data: $("#myForm").serialize(),
 						cache: false,
@@ -12,14 +12,14 @@
 							$("#myTable").append(response);
                         }
 						});
-
+                        
         });
 
     });
 
 </script>
 
-<h1> Towary </h1>
+<div class="text_title">Towary</div>
 
 <table class="table table-dark table-hover" id="myTable">
     <thead>

@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function(){
         
-        $("#myForm").submit(function(){
+        $("#myForm").submit(function(event){
             event.preventDefault();
             $.ajax({
 						url: "dodaj_klienta.php",
@@ -10,6 +10,7 @@
 						cache: false,
 						success: function (response) {
 							$("#myTable").append(response);
+                            console.log(response);
                         }
 						});
 
@@ -19,9 +20,9 @@
 
 </script>
 
-<h1>Klienci</h1>
+<div class="text_title">Klienci</div>
 
-<table class="table table-dark table-hover" id="myTable">
+<table class="table table-dark table-hover mt-2" id="myTable">
     <thead>
         <tr><th>Lp.</th><th>Nazwa</th><th>Adres</th><th>Opis</th><th>Usuń</th><th>Edytuj</th></tr>
     </thead>
@@ -77,7 +78,7 @@ if(isset($_SESSION['login'])){
         </div>
         <div class="form-group">
             <label for="opis">Opis:</label>
-            <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Możesz wpisać opis" autocomplete="off"></textarea>
+            <textarea type="text" class="form-control" id="opis" name="opis" placeholder="Wpisz opis" autocomplete="off"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Dodaj</button>

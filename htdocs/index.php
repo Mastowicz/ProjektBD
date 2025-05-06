@@ -46,8 +46,8 @@
             </div>
         </div>
 
-        <div class="row" id="main">
-            <div class="col-md-12">Witaj w sklepie z ......</div>
+        <div class="row.p p-1" id="main">
+            <div class="text_title">Witaj w sklepie z ......</div>
         </div>
 
         <div class="row" id="footer">

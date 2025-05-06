@@ -1,4 +1,4 @@
-<h4>Zamówienia</h4>
+<div class="text_title">Zamówienia</div>
 
 <table class="table table-dark table-hover">
 <thead>
@@ -37,6 +37,7 @@
     </tbody>
 </table>
 
+<div class="center">
 <form method="POST" action="zapiszOperacje.php">
  
 <h4>Klient:</h4>
@@ -98,3 +99,4 @@
 </select>
 <br><br><button type="submit">zatwierdź</button>
 </form>
+</div>
