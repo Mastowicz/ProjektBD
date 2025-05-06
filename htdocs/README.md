@@ -1,0 +1,2 @@
+# Ninja
+Tak było!
