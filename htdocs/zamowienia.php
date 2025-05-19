@@ -97,6 +97,6 @@
 
 
 </select>
-<br><br><button type="submit">zatwierdź</button>
+<br><br><button type="submit" class="btn btn-danger">zatwierdź</button>
 </form>
 </div>
