@@ -1,2 +1,2 @@
-<h1> Home </h1>
-<h3>Sklep kołki i gwoździe</h3>
+<p class="text-center"> Home </p>
+<p class="text-center"> Sklep kołki i gwoździe </p>

@@ -42,8 +42,8 @@
  
 <h4>Klient:</h4>
 
-<input type="date" name="dataOperacji"><br>
-<select name="klientID">
+<input type="date" class="form-control" name="dataOperacji"><br>
+<select name="klientID" class="form-select" aria-label="Default select example">
     
     <?php
         include 'dbconfig.php';
@@ -71,7 +71,7 @@
 </select>
 
 <h4>Pozycje:</h4>
-<select name="towar1ID">
+<select name="towar1ID" class="form-select" aria-label="Default select example">
     
     <?php
         include 'dbconfig.php';
